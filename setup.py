@@ -33,6 +33,7 @@ setup(
     version=VERSION,
     description='Oracle database library for Robot Framework',
     long_description=DESCRIPTION,
+    long_description_content_type='text/markdown',
     author='Abdullah Deliogullari',
     author_email='abdullahdeliogullari@yaani.com',
     url='https://github.com/adeliogullari/robotframework-oracledb-library',
