@@ -6,7 +6,7 @@ from .mapper import ArgumentMapper
 from .base import OracleBase
 
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 
 class OracleDBLibrary(DynamicCore):
