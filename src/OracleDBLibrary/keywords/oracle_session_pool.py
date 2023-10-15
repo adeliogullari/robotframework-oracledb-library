@@ -1,7 +1,7 @@
-import cx_Oracle
+import oracledb
 from typing import Any
 from robotlibcore import keyword
-from ..base.oracle_base import OracleBase
+from ..base import OracleBase
 
 
 class OracleSessionPoolKeywords:
@@ -11,7 +11,7 @@ class OracleSessionPoolKeywords:
 
     @keyword
     def oracle_session_pool(self, *args: Any, **kwargs: Any) -> None:
-        self.oracle_base.session_pool = cx_Oracle.SessionPool(*args, **kwargs)
+        self.oracle_base.session_pool = oracledb.SessionPool(*args, **kwargs)
 
     @keyword
     def oracle_session_pool_acquire(self, *args: Any, **kwargs: Any) -> None:

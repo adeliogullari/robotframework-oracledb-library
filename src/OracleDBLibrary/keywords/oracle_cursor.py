@@ -1,6 +1,6 @@
 from typing import Any
 from robotlibcore import keyword
-from ..base.oracle_base import OracleBase
+from ..base import OracleBase
 
 
 class OracleCursorKeywords:

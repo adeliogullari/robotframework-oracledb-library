@@ -1,7 +1,7 @@
-import cx_Oracle
+import oracledb
 from typing import Any
 from robotlibcore import keyword
-from ..base.oracle_base import OracleBase
+from ..base import OracleBase
 
 
 class OracleVarKeywords:
@@ -10,15 +10,15 @@ class OracleVarKeywords:
         self.oracle_base = OracleBase()
 
     @keyword
-    def oracle_var(self, *args: Any, **kwargs: Any) -> None:
-        self.oracle_base.var = cx_Oracle.Var(*args, **kwargs)
+    def oracle_var(self) -> None:
+        self.oracle_base.var = oracledb.Var
 
     @keyword
     def oracle_var_copy(self, *args: Any, **kwargs: Any) -> None:
         return self.oracle_base.var.copy(*args, **kwargs)
 
     @keyword
-    def oracle_var_getvalue(self, *args: Any, **kwargs: Any) -> None:
+    def oracle_var_getvalue(self, *args: Any, **kwargs: Any) -> Any:
         return self.oracle_base.var.getvalue(*args, **kwargs)
 
     @keyword
@@ -26,7 +26,7 @@ class OracleVarKeywords:
         self.oracle_base.var.setvalue(*args, **kwargs)
 
     @keyword
-    def oracle_var_actual_elements(self) -> None:
+    def oracle_var_actual_elements(self) -> int:
         return self.oracle_base.var.actual_elements
 
     @keyword

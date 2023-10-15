@@ -1,6 +1,7 @@
 from typing import Optional
-from cx_Oracle import Connection, Cursor, SessionPool, Var
-from ..decorator.singleton import Singleton
+
+from oracledb import Connection, Cursor, SessionPool, Var
+from ..decorator import Singleton
 
 
 @Singleton

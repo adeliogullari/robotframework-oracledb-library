@@ -1,7 +1,7 @@
-import cx_Oracle
+import oracledb
 from typing import Any
 from robotlibcore import keyword
-from ..base.oracle_base import OracleBase
+from ..base import OracleBase
 
 
 class OracleConnectionKeywords:
@@ -10,16 +10,20 @@ class OracleConnectionKeywords:
         self.oracle_base = OracleBase()
 
     @keyword
-    def oracle_makedsn(self, *args: Any, **kwargs: Any) -> None:
-        return cx_Oracle.makedsn(*args, **kwargs)
+    def init_oracle_client(self, *args: Any, **kwargs: Any) -> None:
+        oracledb.init_oracle_client(*args, **kwargs)
+
+    @keyword
+    def oracle_makedsn(self, *args: Any, **kwargs: Any) -> str:
+        return oracledb.makedsn(*args, **kwargs)
 
     @keyword
     def oracle_connect(self, *args: Any, **kwargs: Any) -> None:
-        self.oracle_base.connection = cx_Oracle.connect(*args, **kwargs)
+        self.oracle_base.connection = oracledb.connect(*args, **kwargs)
 
     @keyword
     def oracle_connection(self, *args: Any, **kwargs: Any) -> None:
-        self.oracle_base.connection = cx_Oracle.Connection(*args, **kwargs)
+        self.oracle_base.connection = oracledb.Connection(*args, **kwargs)
 
     @keyword
     def oracle_connection_begin(self, *args: Any, **kwargs: Any) -> None:
