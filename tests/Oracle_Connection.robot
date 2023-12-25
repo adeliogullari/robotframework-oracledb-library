@@ -14,8 +14,8 @@ ${WRONG USER ERROR} =  DatabaseError: ORA-01017: invalid username/password; logo
 ${WRONG PASSWORD ERROR} =  DatabaseError: ORA-01017: invalid username/password; logon denied
 ${WRONG HOST ERROR} =  OperationalError: DPY-6005: cannot connect to database
 ${WRONG PORT ERROR} =  OperationalError: DPY-6005: cannot connect to database
-${WRONG SID ERROR} =  OSError: [Errno 57] Socket is not connected
-${WRONG SERVICE NAME ERROR} =  OSError: [Errno 57] Socket is not connected
+${WRONG SID ERROR} =  OperationalError: DPY-6005: cannot connect to database
+${WRONG SERVICE NAME ERROR} =  OperationalError: DPY-6005: cannot connect to database
 ${WRONG MODE ERROR} =  DatabaseError: ORA-01031: insufficient privileges
 
 *** Test Cases ***
